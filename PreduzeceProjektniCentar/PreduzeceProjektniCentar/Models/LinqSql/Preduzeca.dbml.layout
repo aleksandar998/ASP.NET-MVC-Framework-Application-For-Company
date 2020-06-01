@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.5" name="Preduzeca">
+  <DataContextMoniker Name="/PreduzecaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9da2a066-0a27-4dea-9f6d-05f750ef2a8f" absoluteBounds="3.5, 2.125, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/PreduzecaDataContext/Kontakt" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dba208c5-95b2-47e7-aab7-e9014fae497e" absoluteBounds="3.515, 2.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="35ba97b7-e983-43db-84ba-8ad1d7b84d9f" absoluteBounds="3.5, 5.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/PreduzecaDataContext/UserRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4311d447-d105-4d92-a570-17383fa44cf1" absoluteBounds="3.515, 6.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bc6a28ad-ecb5-4e95-b4b5-b382e61e38a1" absoluteBounds="6.25, 1, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PreduzecaDataContext/Mail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6d647b8f-07da-4112-8ccc-4bbf1dc1ac84" absoluteBounds="6.265, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="66fc2ac1-0ba2-4ab2-a77e-2f3ce1cd9382" absoluteBounds="0.75, 1.375, 2, 3.1170068359375009">
+      <DataClassMoniker Name="/PreduzecaDataContext/Preduzece" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eadcaf38-9fb9-4079-a522-6e24b4f5d6a3" absoluteBounds="0.765, 1.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fc5ee9a3-a543-46b9-af81-c350caa15f5d" absoluteBounds="0.75, 6, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/PreduzecaDataContext/Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d588fa6-1ff6-4b1c-9fcb-3b5f672f11b5" absoluteBounds="0.765, 6.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29488faa-ced1-4a2a-bc89-bb18ddbcc227" absoluteBounds="6.25, 3.125, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/PreduzecaDataContext/Telefon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d270c5c3-9aac-4390-9c20-5810cc54a739" absoluteBounds="6.265, 3.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="234d8996-759f-400a-8f15-399977b67107" absoluteBounds="0.75, 8.875, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/PreduzecaDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ee74269-0667-4836-a57d-fb87a1963d33" absoluteBounds="0.765, 9.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 2.125); (4.5 : 1.5624995); (6.25 : 1.5624995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PreduzecaDataContext/Kontakt/Kontakt_Mail" />
+      <nodes>
+        <classShapeMoniker Id="9da2a066-0a27-4dea-9f6d-05f750ef2a8f" />
+        <classShapeMoniker Id="bc6a28ad-ecb5-4e95-b4b5-b382e61e38a1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.01044840494792); (3.5 : 3.01044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PreduzecaDataContext/Preduzece/Preduzece_Kontakt" />
+      <nodes>
+        <classShapeMoniker Id="66fc2ac1-0ba2-4ab2-a77e-2f3ce1cd9382" />
+        <classShapeMoniker Id="9da2a066-0a27-4dea-9f6d-05f750ef2a8f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.59699625651042); (3.5 : 6.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PreduzecaDataContext/Role/Role_UserRole" />
+      <nodes>
+        <classShapeMoniker Id="fc5ee9a3-a543-46b9-af81-c350caa15f5d" />
+        <classShapeMoniker Id="35ba97b7-e983-43db-84ba-8ad1d7b84d9f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.51044840494792); (6.25 : 3.51044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PreduzecaDataContext/Kontakt/Kontakt_Telefon" />
+      <nodes>
+        <classShapeMoniker Id="9da2a066-0a27-4dea-9f6d-05f750ef2a8f" />
+        <classShapeMoniker Id="29488faa-ced1-4a2a-bc89-bb18ddbcc227" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.56814697265625); (4.5 : 9.56814697265625); (4.5 : 7.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PreduzecaDataContext/User/User_UserRole" />
+      <nodes>
+        <classShapeMoniker Id="234d8996-759f-400a-8f15-399977b67107" />
+        <classShapeMoniker Id="35ba97b7-e983-43db-84ba-8ad1d7b84d9f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

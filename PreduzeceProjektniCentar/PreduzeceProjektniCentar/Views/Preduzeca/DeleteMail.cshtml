@@ -1,0 +1,40 @@
+﻿@model PreduzeceProjektniCentar.Models.MailBO
+
+@{
+    ViewBag.Title = "DeleteMail";
+}
+
+<h2>DeleteMail</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MailBO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MailAdresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MailAdresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OnakaTipa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OnakaTipa)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,132 @@
+﻿@model IEnumerable<PreduzeceProjektniCentar.Models.PreduzeceBO>
+
+@{
+    ViewBag.Title = "Preduzece";
+}
+
+<h2>Preduzeca</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PreduzeceID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opstina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Postanskibroj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PIB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SifraDelatnosti)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OpisDelatnosti)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrRacuna)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WebStr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pecat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Beleska)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PreduzeceID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opstina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Postanskibroj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PIB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SifraDelatnosti)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpisDelatnosti)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrRacuna)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WebStr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pecat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beleska)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+      
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="row">
+    <div class="col-md-4">
+        <label>Preduzeca:</label>
+        @Html.DropDownList("Preduzeca", new SelectList(ViewBag.Preduzeca, "PreduzeceID", "Naziv"), new { @class = "form-control", onchange = "OnSelectPreduzece(this.value)" })
+    </div>
+
+</div>
+<br />
+<h4>Kontakti: </h4>
+<br />
+<div id="kontakti">
+    @*@{
+            Html.RenderAction("GetKontakeByPreduzece","Preduzeca");
+        }*@
+
+</div>
+
+
+
+<script>
+    function OnSelectPreduzece(preduzeceid) {
+        $.ajax({
+            url: '@Url.Action("GetKontakeByPreduzece","Preduzeca")',
+            data: { id: preduzeceid },
+            success: function (result) {
+                $('#kontakti').html(result);
+            }
+            });
+    }
+</script>

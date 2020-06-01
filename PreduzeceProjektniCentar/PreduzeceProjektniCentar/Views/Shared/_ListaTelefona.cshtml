@@ -1,0 +1,38 @@
+﻿@model IEnumerable<PreduzeceProjektniCentar.Models.TelefonBO>
+
+
+<table class="table">
+    <tr>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.OznakaTipa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrojTelefona)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lokal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.OznakaTipa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BrojTelefona)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lokal)
+        </td>
+        <td>
+            @Html.ActionLink("Edit","Edit", "Preduzeca", new { id=item.TelefonID },null) |
+            @Html.ActionLink("Delete","DeleteTelefon", "Preduzeca", new { id=item.TelefonID },null)
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<PreduzeceProjektniCentar.Models.KontaktBO>
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prezime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RadnoMesto)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Ime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prezime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RadnoMesto)
+            </td>
+            <td>
+                @Html.ActionLink("Edit","EditKontakt", "Preduzeca", new {id=item.KontaktID}, null) |
+                    
+                @Html.ActionLink("Delete","DeleteKontakt", "Preduzeca", new {id=item.KontaktID },null)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div class="row">
+    <div class="col-md-4">
+        <label>Kontakti:</label>
+        @Html.DropDownList("Kontakti", new SelectList(ViewBag.Kontakti, "KontaktID", "Ime"), new { @class = "form-control", onchange = "OnSelectKontakt(this.value)" })
+    </div>
+
+</div>
+
+<br />
+<h4>Telefoni: </h4>
+<br />
+<div id="telefoni">
+
+</div>
+
+<br />
+<h4>Mail Adrese: </h4>
+<br />
+<div id="mejlovi">
+
+</div>
+
+<script>
+    function OnSelectKontakt(kontaktid) {
+        $.ajax({
+            url: '@Url.Action("GetTelefoneByKontakt","Preduzeca")',
+            data: { id: kontaktid },
+            success: function (result) {
+                $('#telefoni').html(result);
+            }
+        });
+        $.ajax({
+            url: '@Url.Action("GetMailsByKontakt","Preduzeca")',
+            data: { id: kontaktid },
+            success: function (result) {
+                $('#mejlovi').html(result);
+            }
+            });
+    }
+</script>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<PreduzeceProjektniCentar.Models.MailBO>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MailAdresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OnakaTipa)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MailAdresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OnakaTipa)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditMail", "Preduzeca", new { adresa=item.MailAdresa},null) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete","DeleteMail", "Preduzeca", new {  adresa=item.MailAdresa},null)
+        </td>
+    </tr>
+}
+
+</table>
